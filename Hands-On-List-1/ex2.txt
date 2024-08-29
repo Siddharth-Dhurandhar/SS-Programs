@@ -1,0 +1,4 @@
+Written using original fd.
+Written using dup() file descriptor.
+Written using dup2() file descriptor.
+Written using fcntl() file descriptor.
