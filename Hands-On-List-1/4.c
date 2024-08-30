@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to open an existing file with read write mode. Try O_EXCL flag also. 
+Name : 4.c
+Author : Siddharth Dhurandhar
+Description : Write a program to open an existing file with read write mode. Try O_EXCL flag also. 
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to create a Zombie state of the running program.
+Name : 23.c
+Author : Siddharth Dhurandhar
+Description : Write a program to create a Zombie state of the running program.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

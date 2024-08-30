@@ -1,9 +1,10 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to get scheduling policy and modify the scheduling policy (SCHED_FIFO, SCHED_RR).
+Name : 29.c
+Author : Siddharth Dhurandhar
+Description : Write a program to get scheduling policy and modify the scheduling policy (SCHED_FIFO,
+SCHED_RR).
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

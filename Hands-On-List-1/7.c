@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to copy file1 into file2 ($cp file1 file2).
+Name : 7.c
+Author : Siddharth Dhurandhar
+Description : Write a program to copy file1 into file2 ($cp file1 file2).
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

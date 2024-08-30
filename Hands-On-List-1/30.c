@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to run a script at a specific time using a Daemon process.
+Name : 30.c
+Author : Siddharth Dhurandhar
+Description : Write a program to run a script at a specific time using a Daemon process.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

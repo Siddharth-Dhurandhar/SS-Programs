@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to find out time taken to execute getpid system call. Use time stamp counter. 
+Name : 19.c
+Author : Siddharth Dhurandhar
+Description : Write a program to find out time taken to execute getpid system call. Use time stamp counter.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

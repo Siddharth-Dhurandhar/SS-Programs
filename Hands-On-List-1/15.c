@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to display the environmental variable of the user (use environ).
+Name : 15.c
+Author : Siddharth Dhurandhar
+Description : Write a program to display the environmental variable of the user (use environ).
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

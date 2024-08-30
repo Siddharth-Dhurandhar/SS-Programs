@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to find out the opening mode of a file. Use fcntl.
+Name : 12.c
+Author : Siddharth Dhurandhar
+Description : Write a program to find out the opening mode of a file. Use fcntl.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to create a file and print the file descriptor value. Use creat() system call. 
+Name : 3.c
+Author : Siddharth Dhurandhar
+Description : Write a program to create a file and print the file descriptor value. Use creat ( ) system call.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

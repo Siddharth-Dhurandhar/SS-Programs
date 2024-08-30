@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to create three child processes. The parent should wait for a particular child (use waitpid system call).
+Name : 25.c
+Author : Siddharth Dhurandhar
+Description : Write a program to create three child processes. The parent should wait for a particular child (use waitpid system call).
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

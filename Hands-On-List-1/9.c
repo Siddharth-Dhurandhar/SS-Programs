@@ -1,9 +1,8 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to print the following information about a given file.
+Name : 9.c
+Author : Siddharth Dhurandhar
+Description : Write a program to print the following information about a given file.
  a. inode
  b. number of hard links
  c. uid
@@ -14,6 +13,7 @@ Write a program to print the following information about a given file.
  h. time of last access
  i. time of last modification
  j. time of last change
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

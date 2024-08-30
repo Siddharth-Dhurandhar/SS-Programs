@@ -1,11 +1,12 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to create an orphan process.
+Name : 24.c
+Author : Siddharth Dhurandhar
+Description : Write a program to create an orphan process.
+Date: 30th Aug, 2024.
 ============================================================================
 */
+
 
 #include<stdio.h>
 #include<unistd.h>

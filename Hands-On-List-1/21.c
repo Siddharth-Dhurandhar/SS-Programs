@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program, call fork and print the parent and child process id.
+Name : 21.c
+Author : Siddharth Dhurandhar
+Description : Write a program, call fork and print the parent and child process id.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

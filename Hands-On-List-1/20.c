@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Find out the priority of your running program. Modify the priority with nice command.
+Name : 20.c
+Author : Siddharth Dhurandhar
+Description : Find out the priority of your running program. Modify the priority with nice command.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

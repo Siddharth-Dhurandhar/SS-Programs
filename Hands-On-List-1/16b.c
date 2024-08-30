@@ -1,11 +1,11 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to perform mandatory locking.
+Name : 16b.c
+Author : Siddharth Dhurandhar
+Description : Write a program to perform mandatory locking.
  a. Implement write lock
  b. Implement read lock
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

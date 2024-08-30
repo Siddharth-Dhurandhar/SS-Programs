@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to take input from STDIN and display on STDOUT. Use only read/write system calls.
+Name : 6.c
+Author : Siddharth Dhurandhar
+Description : Write a program to take input from STDIN and display on STDOUT. Use only read/write system calls.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

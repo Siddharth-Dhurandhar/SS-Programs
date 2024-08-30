@@ -1,9 +1,9 @@
 /*
 ============================================================================
-NAME : Siddharth Dhurandhar
-ROLL NO : MT2024151
-
-Write a program to get maximum and minimum real time priority.
+Name : 28.c
+Author : Siddharth Dhurandhar
+Description : Write a program to get maximum and minimum real time priority.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 
