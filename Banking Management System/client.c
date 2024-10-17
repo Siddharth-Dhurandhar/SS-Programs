@@ -15,48 +15,23 @@
 #include"./structs/transaction.h"
 #include"./structs/feedback.h"
 
-void chooseOption(int); //
-void showMenu(int); //
-
-/*
-void attemptAdminLogin(int);
-void addAccount(int);
-void modifyAccount(int);
-void viewDetails(int);
-void changePassword(int, int);
-
-void attemptOtherLogin(int);
-void accountActDeact(int);
-
-void modifyCustomer(int);
-
-void balanceEnquiry(int);
-void deposit(int);
-void withdraw(int);
-void transfer(int);
-
-void viewLoan(int);
-void addLoan(int);
-void grantLoan(int);
-void assignLoan(int);
-
-void displayTransactions(int);
-void addFeedback(int);
-void viewFeedback(int);
-*/
+void chooseOption(int);
+void showMenu(int);
 
 int option, currUserID;
 
 #include"./Func/clientFunc.h"
 
 void chooseOption(int sd){
+    printf("+-------------------------------+\n");
 	printf("1 : Admin Login\n");
     printf("2 : Manager Login\n");
     printf("3 : Employee Login\n");
     printf("4 : Customer Login\n");
+    printf("+-------------------------------+\n");
 	printf("Choose an option : ");
 	scanf("%d",&option);
-	printf("Option : %d\n\n",option);
+	printf("Option : %d\n",option);
 
 	switch(option){
 		case 1 :
@@ -72,7 +47,7 @@ void chooseOption(int sd){
             attemptOtherLogin(sd);
             break;
 		default :
-			printf("Invalid option!\n\n");
+			printf("Invalid option!\n");
 			chooseOption(sd);
 			break;
 	}
@@ -83,16 +58,19 @@ void showMenu(int sd){
 	int type;
 
     if(option == 1){
+        printf("+-------------------------------+\n");
         printf("Admin menu :\n");
+        printf("+-------------------------------+\n");
         printf("1 : Add Account     \n");
         printf("2 : Modify Account  \n");
         printf("3 : View Account    \n");
         printf("4 : Change Password \n");
         printf("5 : Exit            \n");
+        printf("+-------------------------------+\n");
         
         printf("Choose an option : ");
         scanf("%d",&type);
-        printf("Option : %d\n\n",type);
+        printf("Option : %d\n",type);
 
         switch(type){
             case 1:
@@ -109,26 +87,30 @@ void showMenu(int sd){
                 break;
             case 5:
                 write(sd, &type, sizeof(int));
-                printf("Logged out!\n\n");
+                printf("Logged out!\n");
+                printf("+-------------------------------+\n");
                 exit(0);
             default:
-                printf("Invalid option!\n\n");
+                printf("Invalid option!\n");
                 showMenu(sd);
                 break;
         }
     }
     else if(option == 2){
+        printf("+-------------------------------+\n");
         printf("Manager menu :\n");
+        printf("+-------------------------------+\n");
         printf("1 : Activate/Deactivate Account \n");
         printf("2 : Change Password             \n");
         printf("3 : View Loan                   \n");
         printf("4 : Assign Loan                 \n");
         printf("5 : View Feedback               \n");
         printf("6 : Exit                        \n");
+        printf("+-------------------------------+\n");
         
         printf("Choose an option : ");
         scanf("%d",&type);
-        printf("Option : %d\n\n",type);
+        printf("Option : %d\n",type);
 
         switch(type){
             case 1:
@@ -148,26 +130,30 @@ void showMenu(int sd){
                 break;
             case 6:
                 write(sd, &type, sizeof(int));
-                printf("Logged out!\n\n");
+                printf("Logged out!\n");
+                printf("+-------------------------------+\n");
                 exit(0);
             default:
-                printf("Invalid option!\n\n");
+                printf("Invalid option!\n");
                 showMenu(sd);
                 break;
         }
     }
     else if(option == 3){
+        printf("+-------------------------------+\n");
         printf("Employee menu :\n");
+        printf("+-------------------------------+\n");
         printf("1 : Add New Customer  \n");
         printf("2 : Modify Customer   \n");
         printf("3 : View Loans        \n");
         printf("4 : Accept/Reject Loan\n");
         printf("5 : View Transactions \n");
         printf("6 : Exit              \n");
+        printf("+-------------------------------+\n");
 
         printf("Choose an option : ");
         scanf("%d",&type);
-        printf("Option : %d\n\n",type);
+        printf("Option : %d\n",type);
 
         switch(type){
             case 1:
@@ -187,16 +173,19 @@ void showMenu(int sd){
                 break;
             case 6:
                 write(sd, &type, sizeof(int));
-                printf("Logged out!\n\n");
+                printf("Logged out!\n");
+                printf("+-------------------------------+\n");
                 exit(0);
             default:
-                printf("Invalid option!\n\n");
+                printf("Invalid option!\n");
                 showMenu(sd);
                 break;
         }
     }
     else if(option == 4){
+        printf("+-------------------------------+\n");
         printf("Customer menu :\n");
+        printf("+-------------------------------+\n");
         printf("1 : View Balance      \n");
         printf("2 : Deposit Money     \n");
         printf("3 : Withdraw Money    \n");
@@ -206,10 +195,11 @@ void showMenu(int sd){
         printf("7 : View Transactions \n");
         printf("8 : Add Feedback      \n");
         printf("9 : Exit              \n");
+        printf("+-------------------------------+\n");
 
         printf("Choose an option : ");
         scanf("%d",&type);
-        printf("Option : %d\n\n",type);
+        printf("Option : %d\n",type);
 
         switch(type){
             case 1:
@@ -238,10 +228,11 @@ void showMenu(int sd){
                 break;
             case 9:
                 write(sd, &type, sizeof(int));
-                printf("Logged out!\n\n");
+                printf("Logged out!\n");
+                printf("+-------------------------------+\n");
                 exit(0);
             default:
-                printf("Invalid option!\n\n");
+                printf("Invalid option!\n");
                 showMenu(sd);
                 break;
         }
@@ -249,7 +240,7 @@ void showMenu(int sd){
 }
 
 int main(){
-	printf("Welcome to IIIT Bank\n\n");
+	printf("Welcome to Union Bankrupt!\n\n");
 	struct sockaddr_in server;    
 	int sd,msgLength;
 	char buff[50];

@@ -5,6 +5,8 @@
 void attemptAdminLogin(int sd){
 	bool result;
 	struct admin currUser;
+
+    printf("+-------------------------------+\n");
 	printf("User ID : ");
 	scanf("%d",&currUser.userID);
 	currUserID=currUser.userID;
@@ -22,8 +24,10 @@ void attemptAdminLogin(int sd){
 		chooseOption(sd);
 	}
 	else{
-		printf("Succesfully logged in!\n\n");
+		printf("Succesfully logged in!\n");
 	}
+    printf("+-------------------------------+\n\n");
+
 	return;
 }
 
@@ -34,6 +38,7 @@ void addAccount(int sd){
     bzero(rdBuff, sizeof(rdBuff));
     write(sd, &select, sizeof(int));
 
+    printf("+-------------------------------+\n");
     if(option == 1){
         printf("Enter account type\n0: Manager Account\n1: Employee Account\n2: Customer Account\n");
         scanf("%d",&type);
@@ -57,14 +62,17 @@ void addAccount(int sd){
 
     read(sd, &result, sizeof(result));
 
+    printf("+-------------------------------+\n");
     if(!result){
-        printf("Error adding the account!\n\n");
+        printf("Error adding the account!\n");
     }
     else{
-        printf("Successfully added the account!\n\n");
+        printf("Successfully added the account!\n");
     }
 
     printf("%s\n",rdBuff);
+    printf("+-------------------------------+\n\n");
+
     showMenu(sd);
 }
 
@@ -74,6 +82,7 @@ void modifyAccount(int sd){
 
     write(sd, &select, sizeof(int));
 
+    printf("+-------------------------------+\n");
     printf("Enter the user ID to be modified : ");
     scanf("%d", &userID);
     printf("Enter account type\n0: Manager Account\n1: Employee Account\n2: Customer Account\n");
@@ -91,11 +100,13 @@ void modifyAccount(int sd){
     read(sd,&result,sizeof(result));
 
 	if(!result){
-		printf("Error modifying the account ,please re-check the User ID!\n\n");
+		printf("Error modifying the account ,please re-check the User ID!\n");
 	}
 	else{
-		printf("Succesfully modified the account!\n\n");
+		printf("Succesfully modified the account!\n");
 	}
+    printf("+-------------------------------+\n\n");
+
 	showMenu(sd);
     return;
 }
@@ -104,6 +115,8 @@ void viewDetails(int sd){
     int select = 3, userID;
 
     write(sd, &select, sizeof(int));
+
+    printf("+-------------------------------+\n");
     printf("Enter user ID : ");
     scanf("%d",&userID);
     write(sd, &userID, sizeof(int));
@@ -121,8 +134,9 @@ void viewDetails(int sd){
     else if(currUser1.accType == 1) printf("Employee\n");
     else printf("Customer\n");
     
-    if(currUser1.status == 1) printf("Status : ACTIVE\n\n");
-    else printf("Status : NOT ACTIVE\n\n");
+    if(currUser1.status == 1) printf("Status : ACTIVE\n");
+    else printf("Status : NOT ACTIVE\n");
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
     return;
@@ -134,6 +148,7 @@ void changePassword(int sd, int select){
     char nPassword[10];
     bool result;
 
+    printf("+-------------------------------+\n");
     if(option == 1 || option == 2){
         printf("Enter user ID : ");
         scanf("%d",&userID);
@@ -157,11 +172,12 @@ void changePassword(int sd, int select){
     read(sd, &result, sizeof(result));
     
     if(!result){
-        printf("Error changing your password\n\n");
+        printf("Error changing your password\n");
     }
     else{
-        printf("Successfully changed your password!\n\n");
+        printf("Successfully changed your password!\n");
     }
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
     return;
@@ -170,12 +186,14 @@ void changePassword(int sd, int select){
 void attemptOtherLogin(int sd){
     bool result;
 	struct account currUser;
+    printf("+-------------------------------+\n");
 	printf("User ID : ");
 	scanf("%d",&currUser.userID);
 	currUserID=currUser.userID;
 	printf("Password : ");
 	char* pass = getpass("");
 	strcpy(currUser.password, pass);
+    printf("+-------------------------------+\n");
 
 	write(sd,&option,sizeof(int));
 	write(sd,&currUser,sizeof(struct account));
@@ -183,12 +201,15 @@ void attemptOtherLogin(int sd){
 	read(sd,&result,sizeof(result));
 
 	if(!result){
-		printf("Invalid login!\nEither your Password didn't match OR your Account is Deleted\n\n");
+		printf("Invalid login!\nEither your Password didn't match OR your Account is Deleted\n");
 		chooseOption(sd);
 	}
 	else{
-		printf("Succesfully logged in!\n\n");
+		printf("Succesfully logged in!\n");
 	}
+    printf("+-------------------------------+\n\n");
+    
+
 	return;
 }
 
@@ -198,6 +219,7 @@ void accountActDeact(int sd){
 
     write(sd, &select, sizeof(int));
 
+    printf("+-------------------------------+\n");
     printf("Enter the user ID to be modified : ");
     scanf("%d", &userID);
     printf("Enter action type\n0: Deactivate Account\n1: Activate Account\n");
@@ -215,11 +237,13 @@ void accountActDeact(int sd){
     read(sd,&result,sizeof(result));
 
 	if(!result){
-		printf("Error modifying the account ,please re-check the User ID!\n\n");
+		printf("Error modifying the account ,please re-check the User ID!\n");
 	}
 	else{
-		printf("Succesfully modified the account!\n\n");
+		printf("Succesfully modified the account!\n");
 	}
+    printf("+-------------------------------+\n\n");
+
 	showMenu(sd);
     return;
 }
@@ -231,6 +255,7 @@ void modifyCustomer(int sd){
     write(sd, &select, sizeof(int));
 
     struct account modUser1;
+    printf("+-------------------------------+\n");
     printf("Enter the User ID : ");
     scanf("%d",&modUser1.userID);
 
@@ -245,11 +270,12 @@ void modifyCustomer(int sd){
     read(sd, &result, sizeof(result));
 
     if(!result){
-		printf("Error modifying the account ,please re-check the User ID and password!\n\n");
+		printf("Error modifying the account ,please re-check the User ID and password!\n");
 	}
 	else{
-		printf("Succesfully modified the account!\n\n");
+		printf("Succesfully modified the account!\n");
 	}
+    printf("+-------------------------------+\n\n");
 
 	showMenu(sd);
 	return;
@@ -262,8 +288,10 @@ void balanceEnquiry(int sd){
     write(sd, &select, sizeof(int));
     len = read(sd, &amt, sizeof(float));
 
+    printf("+-------------------------------+\n");
     printf("Available Balance : Rs.");
-    printf("%0.2f\n\n",amt);
+    printf("%0.2f\n",amt);
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
     return;
@@ -274,6 +302,7 @@ void deposit(int sd){
     int select = 2;
     bool result;
 
+    printf("+-------------------------------+\n");
     printf("Amount to deposit : Rs.");
     scanf("%f",&amt);
 
@@ -289,11 +318,12 @@ void deposit(int sd){
     read(sd, &result, sizeof(result));
 
     if(!result){
-        printf("Error depositing your money!\n\n");
+        printf("Error depositing your money!\n");
     }
     else{
-        printf("Successfully deposited!\n\n");
+        printf("Successfully deposited!\n");
     }
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
     return;
@@ -304,6 +334,7 @@ void withdraw(int sd){
     int select = 3;
     bool result;
 
+    printf("+-------------------------------+\n");
     printf("Amount to withdraw : Rs.");
     scanf("%f",&amt);
 
@@ -319,11 +350,12 @@ void withdraw(int sd){
     read(sd, &result, sizeof(result));
 
     if(!result){
-        printf("Error withdrawing money, Insufficient balance!\n\n");
+        printf("Error withdrawing money, Insufficient balance!\n");
     }
     else{
-        printf("Successfully withdrew!\n\n");
+        printf("Successfully withdrew!\n");
     }
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
     return;
@@ -336,6 +368,7 @@ void transfer(int sd){
 
     write(sd, &select, sizeof(int));
 
+    printf("+-------------------------------+\n");
     printf("Enter the user ID of payee : ");
     scanf("%d", &userID);
     printf("Enter amount : ");
@@ -353,11 +386,13 @@ void transfer(int sd){
     read(sd,&result,sizeof(result));
 
 	if(!result){
-		printf("Error transferring to the account ,please re-check the User ID!\n\n");
+		printf("Error transferring to the account ,please re-check the User ID!\n");
 	}
 	else{
-		printf("Succesfully transferred to the account!\n\n");
+		printf("Succesfully transferred to the account!\n");
 	}
+    printf("+-------------------------------+\n\n");
+
 	showMenu(sd);
     return;
 }
@@ -369,6 +404,8 @@ void addLoan(int sd){
     
     struct loan addLoan1;
     addLoan1.custID = currUserID;
+
+    printf("+-------------------------------+\n");
     printf("Enter amount : ");
     scanf("%f",&addLoan1.amt);
 
@@ -377,11 +414,12 @@ void addLoan(int sd){
     read(sd, &result, sizeof(result));
 
     if(!result){
-        printf("Error adding the loan!\n\n");
+        printf("Error adding the loan!\n");
     }
     else{
-        printf("Successfully added the loan entry!\n\n");
+        printf("Successfully added the loan entry!\n");
     }
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
 }
@@ -390,6 +428,7 @@ void viewLoan(int sd){
     int num, select = 3, userID;
     struct loan currLoan;
 
+    printf("+-------------------------------+\n");
     printf("Enter the customer user ID : ");
     scanf("%d",&userID);
 
@@ -408,7 +447,8 @@ void viewLoan(int sd){
     for(int i=0; i<num; i++){
         read(sd, &currLoan, sizeof(struct loan));
 
-        printf("\n\nloan id : %d\n", currLoan.loanID);
+        printf("+-------------------------------+\n");
+        printf("loan id : %d\n", currLoan.loanID);
         printf("cust id : %d\n", currLoan.custID);
         printf("amt : %0.2f\n", currLoan.amt);
 
@@ -420,15 +460,16 @@ void viewLoan(int sd){
         }
         
         if(currLoan.granted == -1){
-            printf("granted : pending\n\n");
+            printf("granted : pending\n");
         }
         else if(currLoan.granted == 0){
-            printf("granted : rejected\n\n");
+            printf("granted : rejected\n");
         }
         else if(currLoan.granted == 1){
-            printf("granted : accepted\n\n");
+            printf("granted : accepted\n");
         }
     }
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
     return;
@@ -438,6 +479,7 @@ void grantLoan(int sd){
     int select = 4, loanID, val;
     bool result;
 
+    printf("+-------------------------------+\n");
     printf("Enter loan ID : ");
     scanf("%d",&loanID);
 
@@ -453,20 +495,21 @@ void grantLoan(int sd){
 
     if(!result){
         if(val == 0){
-            printf("Error while rejecting loan!\n\n");
+            printf("Error while rejecting loan!\n");
         }
         else{
-            printf("Error while accepting loan!\n\n");
+            printf("Error while accepting loan!\n");
         }
     }
     else{
         if(val == 0){
-            printf("Successfully rejected loan!\n\n");
+            printf("Successfully rejected loan!\n");
         }
         else{
-            printf("Successfully accepted loan!\n\n");
+            printf("Successfully accepted loan!\n");
         }
     }
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
     return;
@@ -476,6 +519,7 @@ void assignLoan(int sd){
     int select = 4, loanID, empID;
     bool result;
 
+    printf("+-------------------------------+\n");
     printf("Enter loan ID : ");
     scanf("%d",&loanID);
 
@@ -489,21 +533,22 @@ void assignLoan(int sd){
     read(sd, &result, sizeof(result));
 
     if(!result){
-        printf("Unable to assign loan!\n\n");
+        printf("Unable to assign loan!\n");
     }
     else{
-        printf("Successfully assigned loan!\n\n");
+        printf("Successfully assigned loan!\n");
     }
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
     return;
 }
 
 void displayTransactions(int sd){
-    // ye baad me likhunga
     int select, len, num, userID;
     struct trans temp;
 
+    printf("+-----------------------------------------------------------+\n");
     if(option == 3){
         printf("Enter customer user ID : ");
         scanf("%d",&userID);
@@ -523,29 +568,31 @@ void displayTransactions(int sd){
     for(int i=0; i<num; i++){
         read(sd, &temp, sizeof(struct trans));
 
-        printf("\n\ntransaction ID : %d\n", temp.transID);
+        printf("transaction ID : %d\n", temp.transID);
 
         if(temp.type == -1){
-            printf("customer id : %d withdrew : Rs.%0.2f\n\n",temp.payeeID, temp.amt);
+            printf("customer id : %d withdrew : Rs.%0.2f\n",temp.payeeID, temp.amt);
         }
         else if(temp.type == 1){
-            printf("customer id : %d deposited : Rs.%0.2f\n\n",temp.payeeID, temp.amt);
+            printf("customer id : %d deposited : Rs.%0.2f\n",temp.payeeID, temp.amt);
         }
         else if(temp.type == 0){
-            printf("Payer ID : %d transferred to Payee ID : %d amount : Rs.%0.2f\n\n",temp.payerID, temp.payeeID, temp.amt);
+            printf("Payer ID : %d transferred to Payee ID : %d amount : Rs.%0.2f\n",temp.payerID, temp.payeeID, temp.amt);
         }
+        printf("+-----------------------------------------------------------+\n");
     }
+    printf("\n");
 
     showMenu(sd);
     return;
 }
 
 void addFeedback(int sd){
-    //ye bacha hai
     int select = 8,len;
     bool result;
     struct feedback currFeedback;
 
+    printf("+-------------------------------+\n");
     printf("Enter feedback (max 999 characters) :\n");
     len = read(0, currFeedback.buff, sizeof(currFeedback.buff) - 1);
 
@@ -556,11 +603,12 @@ void addFeedback(int sd){
     read(sd, &result, sizeof(result));
 
     if(!result){
-        printf("Error while sending feedback!\n\n");
+        printf("Error while sending feedback!\n");
     }
     else{
-        printf("Feedback sent successfully!\n\n");
+        printf("Feedback sent successfully!\n");
     }
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
     return;
@@ -577,11 +625,10 @@ void viewFeedback(int sd){
 
     for(int i=0; i<num; i++){
         read(sd, &record, sizeof(struct feedback));
-
-        printf("%s\n", record.buff);
+        printf("+-------------------------------+\n");
+        printf("%s", record.buff);
     }
-
-    printf("\n");
+    printf("+-------------------------------+\n\n");
 
     showMenu(sd);
     return;

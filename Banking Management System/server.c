@@ -228,14 +228,6 @@ void serverTask(int nsd){
 				write(nsd, &result, sizeof(result));
 			}
 			else if(select == 3){
-				// isme view loan ka karle
-				// ek linear search to count the no of 
-				// loans for a particular custID
-				// send this count
-				// dusra linear search to actually send
-				// the loan structures, the client 
-				// already knows about the no of loans
-				// so it will only ask till that no
 				int custID, empID, num;
 				read(nsd, &custID, sizeof(int));
 				read(nsd, &empID, sizeof(int));
@@ -305,7 +297,6 @@ void serverTask(int nsd){
 				write(nsd, &result, sizeof(result));
 			}
 			else if(select == 7){
-				// ye baad me likhunga
 				int userID, num;
 				read(nsd, &userID, sizeof(int));
 				num = numTransactions(userID);
