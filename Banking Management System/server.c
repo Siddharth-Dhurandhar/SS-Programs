@@ -212,7 +212,9 @@ void serverTask(int nsd){
 				write(nsd, &num, sizeof(int));
 				readFeedback(nsd);
 			}
-			else if(select == 6) break;
+			else if(select == 6){
+				break;
+			}
 		}
 		else if(option == 3){
 			if(select == 1){
@@ -252,7 +254,9 @@ void serverTask(int nsd){
 				write(nsd, &num, sizeof(int));
 				viewTransactions(nsd, userID);
 			}
-			else if(select == 6) break;
+			else if(select == 6){
+				break;
+			}
 		}
 		else if(option == 4){
 			if(select == 1){
@@ -310,7 +314,9 @@ void serverTask(int nsd){
 				result = writeFeedback(nsd, currFeedback);
 				write(nsd, &result, sizeof(result));
 			}
-			else if(select == 9) break;
+			else if(select == 9){
+				break;
+			}
 		}
 	}
 

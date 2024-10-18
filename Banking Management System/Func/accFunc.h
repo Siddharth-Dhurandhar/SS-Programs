@@ -161,13 +161,17 @@ bool modifyStatus(int userID, int newStatus){
     lseek(fd, (i)*sizeof(struct account), SEEK_SET);
     read(fd, &currUser, sizeof(struct account));
 
-    currUser.status = newStatus;
+    if(currUser.accType == 1 || currUser.accType == 2){
+        currUser.status = newStatus;
+        lseek(fd, (-1)*sizeof(struct account), SEEK_CUR);
+        int j = write(fd, &currUser, sizeof(struct account));
+        if(j!=0) result = true;
+        else result = false;
+    }
+    else{
+        result = false;
+    }
     
-    lseek(fd, (-1)*sizeof(struct account), SEEK_CUR);
-    int j = write(fd, &currUser, sizeof(struct account));
-    if(j!=0) result = true;
-    else result = false;
-
     lock.l_type=F_UNLCK;
     fcntl(fd,F_SETLK,&lock);
 

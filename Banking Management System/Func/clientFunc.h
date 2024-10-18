@@ -123,19 +123,25 @@ void viewDetails(int sd){
 
     struct account currUser1;
     read(sd, &currUser1, sizeof(struct account));
-    printf("\nUser ID : %d\n", currUser1.userID);
-    printf("Name : %s\n",currUser1.name);
-    printf("Password : %s\n",currUser1.password);
-    printf("Account Number : %d\n",currUser1.account_no);
-    printf("Available balance : RS.%0.2f\n",currUser1.balance);
+    if(currUser1.userID == userID){
+        printf("\nUser ID : %d\n", currUser1.userID);
+        printf("Name : %s\n",currUser1.name);
+        printf("Password : %s\n",currUser1.password);
+        printf("Account Number : %d\n",currUser1.account_no);
+        printf("Available balance : RS.%0.2f\n",currUser1.balance);
 
-    printf("Account type : ");
-    if(currUser1.accType == 0) printf("Manager\n");
-    else if(currUser1.accType == 1) printf("Employee\n");
-    else printf("Customer\n");
-    
-    if(currUser1.status == 1) printf("Status : ACTIVE\n");
-    else printf("Status : NOT ACTIVE\n");
+        printf("Account type : ");
+        if(currUser1.accType == 0) printf("Manager\n");
+        else if(currUser1.accType == 1) printf("Employee\n");
+        else printf("Customer\n");
+        
+        if(currUser1.status == 1) printf("Status : ACTIVE\n");
+        else printf("Status : NOT ACTIVE\n");
+    }
+    else{
+        printf("Invalid user ID!\n");
+    }
+
     printf("+-------------------------------+\n\n");
 
     showMenu(sd);
@@ -408,6 +414,11 @@ void addLoan(int sd){
     printf("+-------------------------------+\n");
     printf("Enter amount : ");
     scanf("%f",&addLoan1.amt);
+
+    while(addLoan1.amt <= 0){
+        printf("Invalid amount!\nPlease enter a valid amount!\n");
+        scanf("%f",&addLoan1.amt);
+    }
 
     write(sd, &addLoan1, sizeof(struct loan));
 
